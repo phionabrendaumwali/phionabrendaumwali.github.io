@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Wearable Privacy Research · Phiona Brenda Umwali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="../index.html" class="logo">pbu</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../about.html">about</a></li>
+        <li><a href="../index.html#work">work</a></li>
+        <li><a href="../fun-projects.html">fun projects</a></li>
+        <li><a href="../resume.html">resume</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="hero-glow"></div>
+<main>
+  <section class="case-hero wrap">
+    <a href="../index.html#work" class="back">&larr; back to work</a>
+    <div class="eyebrow">Ubiquitous Computing · Privacy Research · HCI</div>
+    <h1>What happens to privacy when a device doesn't just watch you, but everyone around you too?</h1>
+    <p class="dek">For Cornell's Ubiquitous Computing course, my team designed a wearable prototype and ran a human-subjects study comparing smartwatches to AI glasses, and specifically looked at how bystanders, not just wearers, experience that technology.</p>
+
+    <div class="meta-grid">
+      <div><div class="m-label">Role</div><div class="m-value">Researcher, Prototype Design, Data Analytics</div></div>
+      <div><div class="m-label">Team</div><div class="m-value">4 students</div></div>
+      <div><div class="m-label">Timeline</div><div class="m-value">Spring 2025</div></div>
+      <div><div class="m-label">Tools</div><div class="m-value">Python, TextBlob, Surveys, IRB</div></div>
+    </div>
+  </section>
+
+  <section class="case-layout wrap">
+    <aside class="toc" id="toc"></aside>
+    <div class="case-body">
+
+    <div class="block">
+      <h2>The gap we found</h2>
+      <p class="lead">There's plenty of research on privacy concerns around health wearables, like Fitbits, smartwatches, and biometric data. There's a lot less on what happens when a wearable can sense the environment and the people around it, not just its owner.</p>
+      <p>So instead of asking "are people worried about privacy," we asked something more specific: does that worry change when the device can also affect people who never opted into wearing it? We compared a <strong>personal wearable</strong> (collects data mainly about the wearer, like a smartwatch) against an <strong>environmental wearable</strong> (can sense the surroundings and nearby people, like AI glasses), and studied both wearers and bystanders.</p>
+    </div>
+
+    <div class="block">
+      <h2>The prototype</h2>
+      <p>We designed and built the wearable ourselves, specifically to be visible enough that we could study whether people noticed it, whether noticing changed their behavior, and whether a visible new device felt more intrusive than a familiar smartwatch.</p>
+      <div class="fig-row reveal">
+        <div class="fig">
+          <img src="../assets/prototype-photo.png" alt="The AI wearable prototype: a pair of glasses fitted with a small circuit board and battery mounted along the temple">
+          <div class="cap">The smart-glasses prototype used in the study</div>
+        </div>
+        <div class="fig">
+          <img src="../assets/ai-glasses-prototype-build.jpg" alt="Close-up of the glasses frame with the circuit board and battery attached along the temple, mid-build">
+          <div class="cap">The electronics mounted along the temple, mid-build</div>
+        </div>
+      </div>
+      <div class="fig reveal">
+        <img src="../assets/research-session-candid.jpg" alt="Two participants seated and talking during a research session, one wearing the smart glasses prototype, with an observer taking notes in the background">
+        <div class="cap">A live session: the prototype worn during a conversation, observer taking notes in the background</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>My role</h2>
+      <ul>
+        <li>Helped design the physical prototype and the experimental conditions</li>
+        <li>Completed human-subjects research training and helped design participant tasks and interview questions</li>
+        <li>Ran in-person experiments and took behavioral observation notes</li>
+        <li>Conducted and analyzed interviews</li>
+        <li>Built the Python text-analysis pipeline: cleaning open-ended responses, sentiment analysis, keyword extraction, word co-occurrence heatmaps</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>How the study evolved</h2>
+      <div class="steps">
+        <div class="step" data-n="1">
+          <h3>Our first pilot didn't reveal anything real</h3>
+          <p>We ran six pilot sessions, mostly with friends and roommates. The tasks were too easy and the responses were shallow; there wasn't enough at stake for anyone to reveal an actual privacy reaction. Asking "are you concerned about privacy?" gets you a polite answer, not a real one.</p>
+        </div>
+        <div class="step" data-n="2">
+          <h3>We redesigned around actual behavioral pressure</h3>
+          <p>We added <strong>low-stakes</strong> conversation (hobbies, movies) and <strong>high-stakes</strong> conversation (political opinions, ethical dilemmas, protests and policing) so we could compare what people said with what they were willing to say once the topic got personal. We also added fitness tasks for the smartwatch condition, since smartwatch privacy is less about what you say and more about what your body reveals. We also ran a control condition, so we could separate "this is uncomfortable because I'm being studied" from "this is uncomfortable because of this specific device."</p>
+          <div class="fig reveal">
+            <img src="../assets/reference-pose-photo.png" alt="Two people standing and talking face to face, posed to illustrate the conversational task setup (reference image only, not an actual experiment session)">
+            <div class="cap">Illustrating the conversation task setup (posed reference photo, not an actual session)</div>
+          </div>
+        </div>
+        <div class="step" data-n="3">
+          <h3>Observed without adding another surveillance device</h3>
+          <p>We didn't want to introduce a camera or recorder just to observe participants; that would have added its own privacy variable. An observer took notes by hand instead.</p>
+        </div>
+        <div class="step" data-n="4">
+          <h3>Built a full NLP pipeline for the open-ended responses</h3>
+          <p>Google Form responses went through Python: text cleaning, stopword removal (including obvious terms like "glasses" that showed up in nearly every response and drowned out anything more meaningful), sentiment scoring with TextBlob, keyword frequency, and word co-occurrence heatmaps to see which concepts (consent, data, control) actually clustered together in people's answers.</p>
+          <div class="fig-row reveal">
+            <div class="fig">
+              <img src="../assets/top-keywords-chart.png" alt="Horizontal bar chart of the top 10 keywords across all survey forms combined: data, without, consent, privacy, people, recorded, used, record, ethical, collect">
+              <div class="cap">Top 10 keywords across all forms combined</div>
+            </div>
+            <div class="fig">
+              <img src="../assets/combined-wordcloud.png" alt="Word cloud of combined survey responses across smartwatches and smart glasses, users and bystanders, dominated by the words data, without, consent, recorded, and privacy">
+              <div class="cap">Combined word cloud: smartwatches &amp; smart glasses, users &amp; bystanders</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull reveal">Bystanders reacted more strongly than users. The difference is agency: a wearer chose the device. A bystander didn't choose anything.</div>
+
+    <div class="block">
+      <h2>What we found</h2>
+      <div class="two-col">
+        <div class="finding-card reveal">
+          <h4>Smart glasses changed the privacy equation</h4>
+          <p>75% of glasses users felt responsible for protecting bystander privacy, and 75% thought bystander consent should be explicitly required.</p>
+        </div>
+        <div class="finding-card reveal">
+          <h4>Bystanders were the most concerned group</h4>
+          <p>Every bystander in the glasses condition noticed the device; 3 of 4 believed consent should be required and reported discomfort at the idea of being recorded.</p>
+        </div>
+        <div class="finding-card reveal">
+          <h4>Smartwatches had become "normal"</h4>
+          <p>100% of smartwatch users said the privacy policies were unclear, and most said they'd keep using the device anyway. Familiarity and convenience outweighed the concern they'd just voiced. Still, 75% of participants overall said smartwatches specifically should face <em>stricter</em> privacy regulation: comfort using something doesn't mean people think it's adequately regulated.</p>
+        </div>
+        <div class="finding-card reveal">
+          <h4>Disclosure didn't change much behavior</h4>
+          <p>Telling participants their data might train an AI model made people think about the issue, but rarely changed what they actually did. Several told us afterward they'd simply forgotten the device was there during the conversation.</p>
+        </div>
+      </div>
+      <div class="fig-row reveal">
+        <div class="fig">
+          <img src="../assets/sentiment-smart-glasses-adoption.png" alt="Pie chart: sentiment if smart glasses became widely used in daily life (50% negative, 25% neutral, 25% positive)">
+          <div class="cap">How participants said they'd feel if smart glasses became widely used</div>
+        </div>
+        <div class="fig">
+          <img src="../assets/smartwatch-regulation-poll.png" alt="Pie chart: 75% of participants believe smartwatches should have stricter privacy regulations, 25% do not">
+          <div class="cap">Do smartwatches need stricter privacy regulation?</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Bystanders, side by side</h2>
+      <p>Comparing smartwatch bystanders against smart-glasses bystanders directly made the gap easier to see than any single stat could:</p>
+      <div class="table-scroll">
+        <table class="compare">
+          <tr><th>Category</th><th>Smartwatch bystanders</th><th>Smart-glasses bystanders</th></tr>
+          <tr><td>General concern</td><td>Mild to moderate</td><td>High, urgent</td></tr>
+          <tr><td>Consent</td><td>Mentioned but not dominant</td><td>Central focus</td></tr>
+          <tr><td>Emotional tone</td><td>Neutral</td><td>Anxious</td></tr>
+          <tr><td>Privacy impact</td><td>Thoughtful, low risk</td><td>Emotionally charged</td></tr>
+          <tr><td>Language used</td><td>Softer keywords</td><td>Strong negative keywords</td></tr>
+          <tr><td>Trust in AI-data policies</td><td>Mostly distrustful, somewhat aware</td><td>Largely distrustful, unaware</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Study sample</h2>
+      <div class="stats reveal">
+        <div class="stat"><div class="num" data-count="20">0</div><div class="label">participants across 4 conditions</div></div>
+        <div class="stat"><div class="num" data-count="75" data-suffix="%">0</div><div class="label">glasses users supporting explicit bystander consent</div></div>
+        <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="label">smartwatch users flagging unclear privacy policies</div></div>
+        <div class="stat"><div class="num" data-count="6">0</div><div class="label">pilot sessions that led us to redesign the study</div></div>
+      </div>
+      <div class="fig-row reveal">
+        <div class="fig">
+          <img src="../assets/gender-distribution.png" alt="Pie chart of participant gender distribution: 45% female, 45% male, 5% non-binary, 5% prefer not to say">
+          <div class="cap">Participant gender distribution</div>
+        </div>
+        <div class="fig">
+          <img src="../assets/age-distribution.png" alt="Pie chart of participant age distribution, mostly 20 and 21 year olds with a smaller spread from 18 to 27">
+          <div class="cap">Participant age distribution</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>What I learned</h2>
+      <p>Privacy is social, not just individual. A wearable changes the privacy environment of everyone nearby, not just the person wearing it. And behavior reveals more than a survey does: people who said they were comfortable still hesitated the moment a conversation turned sensitive. The six "failed" pilots weren't wasted either; they told us our original design wasn't strong enough to elicit a real reaction, which is exactly what let us fix it.</p>
+    </div>
+
+    <div class="block">
+      <h2>What I'd do differently</h2>
+      <ul>
+        <li>Run a longer field study (days or weeks of actual wearable use) instead of a 30-minute lab session, to see if awareness fades as the novelty does</li>
+        <li>Recruit outside the Cornell student population for more demographic range</li>
+        <li>Separate physical design from sensing capability, to isolate how a device's appearance (not just what it collects) shapes people's reaction</li>
+        <li>Add statistical testing once the sample is large enough to support it</li>
+      </ul>
+    </div>
+
+    </div>
+  </section>
+
+  <div class="wrap">
+    <a href="../fun-projects.html" class="next-project">
+      <div>
+        <div class="lbl">Next</div>
+        <h3>Fun projects</h3>
+      </div>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="small">Phiona Brenda Umwali &middot; pbu2@cornell.edu &middot; +1 (607) 379-0457</div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/brenda-umwali/" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/phionabrendaumwali" aria-label="GitHub">gh</a>
+      <a href="mailto:pbu2@cornell.edu" aria-label="Email">@</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
