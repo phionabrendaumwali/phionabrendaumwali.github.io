@@ -18,7 +18,17 @@
     const navToggle = document.querySelector(".nav-toggle");
     const navRow = document.querySelector(".nav-row");
     if (navToggle && navRow) {
-      navToggle.addEventListener("click", () => navRow.classList.toggle("open"));
+      navToggle.addEventListener("click", () => {
+        const isOpen = navRow.classList.toggle("open");
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      });
+      // Close the menu (and restore scroll) whenever a nav link is tapped
+      navRow.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navRow.classList.remove("open");
+          document.body.style.overflow = "";
+        });
+      });
     }
 
     // --- Cursor-reactive hero glow (desktop only, respects reduced motion) ---

@@ -239,16 +239,21 @@ header.site-nav {
   .nav-row.open .nav-links {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 68px;
     left: 0;
     right: 0;
+    bottom: 0;
     background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    padding: 20px 28px 26px;
-    gap: 18px;
+    padding: 28px 28px 26px;
+    gap: 22px;
     z-index: 20;
+    overflow-y: auto;
   }
+  .nav-row.open .nav-links a {
+    font-size: 17px;
+  }
+}
 }
 
 /* ============================================================
