@@ -145,7 +145,8 @@ html.dark .bg-blob.b3 { opacity: 0.20; }
 }
 
 /* Everything that should sit above the ambient background */
-header.site-nav, main, footer { position: relative; z-index: 1; }
+header.site-nav { position: relative; z-index: 2; }
+main, footer { position: relative; z-index: 1; }
 
 /* Scroll-reveal */
 .reveal {
@@ -552,6 +553,38 @@ section.tight { padding: 40px 0; }
 }
 .case-body ul { margin: 0 0 16px; padding-left: 20px; color: var(--ink-soft); }
 .case-body li { margin-bottom: 8px; }
+
+/* TL;DR block, top of every case study */
+.tldr {
+  margin-top: 32px;
+  padding: 22px 26px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: var(--radius);
+}
+.tldr-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-warm);
+  margin-bottom: 12px;
+}
+.tldr ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tldr li {
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.tldr li strong { color: var(--ink); font-weight: 600; }
 
 /* ============================================================
    Sticky table of contents (project case-study pages)

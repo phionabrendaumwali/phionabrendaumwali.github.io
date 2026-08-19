@@ -37,6 +37,15 @@
       });
     }
 
+    // --- Self-updating project count (never goes stale as cards are added/removed) ---
+    (function () {
+      const countEl = document.getElementById("project-count");
+      const grid = document.getElementById("work-grid");
+      if (!countEl || !grid) return;
+      const n = grid.querySelectorAll(":scope > a.card").length;
+      countEl.textContent = String(n).padStart(2, "0") + " project" + (n === 1 ? "" : "s");
+    })();
+
     // --- Ambient moving-green background (soft drifting blobs, every page) ---
     (function () {
       const field = document.createElement("div");
@@ -153,10 +162,15 @@
     }
 
     // --- Animated stat counters ---
+    // The HTML already contains the correct final value as a static fallback
+    // (e.g. "29K+"), so anyone without JS, with a failed observer, or with
+    // reduced-motion on still sees the real number, never a stray "0".
     const stats = document.querySelectorAll(".stat .num[data-count]");
-    if (stats.length && "IntersectionObserver" in window) {
+    const prefersReducedMotionStats = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (stats.length && "IntersectionObserver" in window && !prefersReducedMotionStats) {
       const animateCount = (el) => {
         const target = parseFloat(el.getAttribute("data-count"));
+        if (isNaN(target)) return;
         const suffix = el.getAttribute("data-suffix") || "";
         const prefix = el.getAttribute("data-prefix") || "";
         const decimals = el.getAttribute("data-decimals") ? parseInt(el.getAttribute("data-decimals")) : 0;
@@ -167,7 +181,11 @@
           const eased = 1 - Math.pow(1 - progress, 3);
           const value = target * eased;
           el.textContent = prefix + value.toFixed(decimals) + suffix;
-          if (progress < 1) requestAnimationFrame(tick);
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = prefix + target.toFixed(decimals) + suffix;
+          }
         }
         requestAnimationFrame(tick);
       };
@@ -184,6 +202,9 @@
       );
       stats.forEach((el) => statIo.observe(el));
     }
+    // If JS is disabled, the observer isn't supported, or reduced-motion is
+    // on, nothing runs here at all — the static, correct value already in
+    // the HTML is simply left alone.
 
     // --- Copy-to-clipboard (email / phone) ---
     document.querySelectorAll(".copy-btn").forEach((btn) => {

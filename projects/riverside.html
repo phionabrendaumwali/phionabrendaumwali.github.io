@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riverside · Phiona Brenda Umwali</title>
+<title>Private Equity Investment Analytics · Phiona Brenda Umwali</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
@@ -40,13 +40,23 @@
     <a href="../index.html#work" class="back">&larr; back to work</a>
     <div class="eyebrow">Private Equity · Predictive Analytics · Portfolio Strategy</div>
     <h1>Can early performance predict a private-equity investment's eventual outcome?</h1>
-    <p class="dek">I led the quantitative track on a seven-person Cornell practicum team working with The Riverside Company's Strategy &amp; Analytics group, turning years of portfolio data into a framework for spotting risk early and testing which signals actually predict returns.</p>
+    <p class="dek">I led the quantitative track on a seven-person Cornell practicum team working with a New York-based PE firm's Strategy &amp; Analytics group <span style="font-size:0.85em; color:var(--ink-faint);">[company name withheld per NDA]</span>, turning years of portfolio data into a framework for spotting risk early and testing which signals actually predict returns.</p>
 
     <div class="meta-grid">
       <div><div class="m-label">Role</div><div class="m-value">Quantitative Analyst, Team Lead</div></div>
       <div><div class="m-label">Team</div><div class="m-value">7-person quantitative data engineering team</div></div>
       <div><div class="m-label">Timeline</div><div class="m-value">Fall 2025</div></div>
       <div><div class="m-label">Tools</div><div class="m-value">Python, R, scikit-learn, Tableau</div></div>
+    </div>
+
+    <div class="tldr reveal">
+      <div class="tldr-label">TL;DR</div>
+      <ul>
+        <li><strong>Problem:</strong> The firm had years of portfolio data but no reliable way to know which early signals actually predicted an investment's eventual outcome.</li>
+        <li><strong>What I did:</strong> Led the quantitative track on a 7-person team, building a framework that separated forecast, operating performance, and investment outcome, then tested each against the firm's practicum data.</li>
+        <li><strong>Key finding:</strong> Early operating performance predicted downside risk far better than upside; companies missing projections by 50%+ were about 60% more likely to post a negative IRR.</li>
+        <li><strong>Impact:</strong> Gave the firm's Strategy &amp; Analytics group a risk-adjusted, industry-aware framework for flagging underperformance early, instead of relying on raw forecast comparisons.</li>
+      </ul>
     </div>
   </section>
 
@@ -56,7 +66,7 @@
 
     <div class="block">
       <h2>The problem</h2>
-      <p class="lead">Riverside had years of portfolio data (sales, EBITDA, forecasts, IRR, exit outcomes), but that volume of data didn't automatically translate into a usable investment signal.</p>
+      <p class="lead">The firm had years of portfolio data (sales, EBITDA, forecasts, IRR, exit outcomes), but that volume of data didn't automatically translate into a usable investment signal.</p>
       <p>The return dataset alone had 26,759 observations, but roughly 46% of projected IRR, 45% of projected GCoC, and about 94% of realized IRR/GCoC fields were missing. Just running correlations across that raw data would have produced misleading conclusions. We needed a framework that separated <strong>forecast</strong> from <strong>operating performance</strong> from <strong>investment outcome</strong>, instead of hunting for correlations across every variable at once.</p>
     </div>
 
@@ -178,7 +188,7 @@
           <div class="cap">Sales performance vs. IRR classification</div>
         </div>
         <div class="fig">
-          <img src="../assets/gcoc-heatmap.jpg" alt="Heatmap of Sales performance class versus IRR classification with a different, weaker pattern, matching the GCoC finding">
+          <img src="../assets/gcoc-heatmap.jpg" alt="Heatmap of Sales performance class versus GCoC classification with a different, weaker pattern, matching the GCoC finding">
           <div class="cap">Sales performance vs. GCoC classification (weaker pattern)</div>
         </div>
       </div>
@@ -194,9 +204,9 @@
     <div class="block">
       <h2>Results</h2>
       <div class="stats reveal">
-        <div class="stat"><div class="num" data-count="29" data-suffix="K+">0</div><div class="label">financial-performance observations analyzed</div></div>
-        <div class="stat"><div class="num" data-count="60" data-prefix="~" data-suffix="%">0</div><div class="label">negative-IRR rate in the most severe early-miss band</div></div>
-        <div class="stat"><div class="num" data-count="1.46" data-decimals="2">0</div><div class="label">Software &amp; IT risk-adjusted IRR ratio</div></div>
+        <div class="stat"><div class="num" data-count="29" data-suffix="K+">29K+</div><div class="label">financial-performance observations analyzed</div></div>
+        <div class="stat"><div class="num" data-count="60" data-prefix="~" data-suffix="%">~60%</div><div class="label">negative-IRR rate in the most severe early-miss band</div></div>
+        <div class="stat"><div class="num" data-count="1.46" data-decimals="2">1.46</div><div class="label">Software &amp; IT risk-adjusted IRR ratio</div></div>
         <div class="stat"><div class="num">0.54–0.67</div><div class="label">AUC range showing weak upside prediction</div></div>
       </div>
     </div>
@@ -232,11 +242,11 @@
 
 <footer>
   <div class="wrap foot-row">
-    <div class="small">Phiona Brenda Umwali &middot; pbu2@cornell.edu &middot; +1 (607) 379-0457</div>
+    <div class="small">Phiona Brenda Umwali &middot; umwalibrendaphiona@gmail.com</div>
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/brenda-umwali/" aria-label="LinkedIn">in</a>
-      <a href="https://github.com/phionabrendaumwali" aria-label="GitHub">gh</a>
-      <a href="mailto:pbu2@cornell.edu" aria-label="Email">@</a>
+      <a href="https://www.linkedin.com/in/brenda-umwali/" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://github.com/phionabrendaumwali" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.94c.58.1.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.02 1.76 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.2 1.18a11 11 0 0 1 5.83 0c2.22-1.49 3.19-1.18 3.19-1.18.64 1.59.24 2.76.12 3.05.75.81 1.2 1.83 1.2 3.09 0 4.41-2.7 5.38-5.27 5.67.42.36.78 1.08.78 2.18v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+      <a href="mailto:umwalibrendaphiona@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
     </div>
   </div>
 </footer>
