@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Equity Investment Analytics · Phiona Brenda Umwali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-row">
+    <a href="../index.html" class="logo">pbu</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../about.html">about</a></li>
+        <li><a href="../index.html#work">work</a></li>
+        <li><a href="../fun-projects.html">ubi comp projects</a></li>
+        <li><a href="../resume.html">resume</a></li>
+        <li><a href="../contact.html">contact</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="hero-glow"></div>
+<main>
+  <section class="case-hero wrap">
+    <a href="../index.html#work" class="back">&larr; back to work</a>
+    <div class="eyebrow">Private Equity · Predictive Analytics · Portfolio Strategy</div>
+    <h1>Can early performance predict a private-equity investment's eventual outcome?</h1>
+    <p class="dek">I led the quantitative track on a seven-person Cornell practicum team working with a New York-based PE firm's Strategy &amp; Analytics group <span style="font-size:0.85em; color:var(--ink-faint);">[company name withheld per NDA]</span>, turning years of portfolio data into a framework for spotting risk early and testing which signals actually predict returns.</p>
+
+    <div class="meta-grid">
+      <div><div class="m-label">Role</div><div class="m-value">Quantitative Analyst, Team Lead</div></div>
+      <div><div class="m-label">Team</div><div class="m-value">7-person quantitative data engineering team</div></div>
+      <div><div class="m-label">Timeline</div><div class="m-value">Fall 2025</div></div>
+      <div><div class="m-label">Tools</div><div class="m-value">Python, R, scikit-learn, Tableau</div></div>
+    </div>
+
+    <div class="tldr reveal">
+      <div class="tldr-label">TL;DR</div>
+      <ul>
+        <li><strong>Problem:</strong> The firm had years of portfolio data but no reliable way to know which early signals actually predicted an investment's eventual outcome.</li>
+        <li><strong>What I did:</strong> Led the quantitative track on a 7-person team, building a framework that separated forecast, operating performance, and investment outcome, then tested each against the firm's practicum data.</li>
+        <li><strong>Key finding:</strong> Early operating performance predicted downside risk far better than upside; companies missing projections by 50%+ were about 60% more likely to post a negative IRR.</li>
+        <li><strong>Impact:</strong> Gave the firm's Strategy &amp; Analytics group a risk-adjusted, industry-aware framework for flagging underperformance early, instead of relying on raw forecast comparisons.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-layout wrap">
+    <aside class="toc" id="toc"></aside>
+    <div class="case-body">
+
+    <div class="block">
+      <h2>The problem</h2>
+      <p class="lead">The firm had years of portfolio data (sales, EBITDA, forecasts, IRR, exit outcomes), but that volume of data didn't automatically translate into a usable investment signal.</p>
+      <p>The return dataset alone had 26,759 observations, but roughly 46% of projected IRR, 45% of projected GCoC, and about 94% of realized IRR/GCoC fields were missing. Just running correlations across that raw data would have produced misleading conclusions. We needed a framework that separated <strong>forecast</strong> from <strong>operating performance</strong> from <strong>investment outcome</strong>, instead of hunting for correlations across every variable at once.</p>
+    </div>
+
+    <div class="block">
+      <h2>What I was responsible for</h2>
+      <p>As team lead for the quantitative analysts team, I:</p>
+      <ul>
+        <li>Ran exploratory analysis across the financial, return, and exit datasets: completeness, distributions, outliers, relationships between variables</li>
+        <li>Compared historical and projected performance against what actually happened at exit</li>
+        <li>Helped build and validate the regression models that tested our early-warning hypotheses</li>
+        <li>Compared performance across industries and fund families using a risk-adjusted lens</li>
+        <li>Turned statistical results into plain-language investment signals for the client, and built the visualizations that carried those findings</li>
+      </ul>
+      <p>The modeling and client deliverables were a team effort. I'm calling out my part specifically so nothing here reads as if I built every piece of it solo.</p>
+    </div>
+
+    <div class="block">
+      <h2>How the analysis unfolded</h2>
+      <div class="steps">
+        <div class="step" data-n="1">
+          <h3>Forecasts turned out to be weak predictors of returns</h3>
+          <p>Operating variables were tightly correlated with each other (sales and forecasted sales, r ≈ 0.97) but projected IRR barely correlated with actual IRR (r ≈ 0.03). That single result changed the direction of the whole project; we stopped asking "which projected return looks best?" and started asking "how does a company's actual execution against its forecast change its odds of success?"</p>
+        </div>
+        <div class="step" data-n="2">
+          <h3>Sector performance needed a risk lens, not just an average</h3>
+          <p>Ranking industries by average IRR rewarded sectors with a few lucky outliers. Instead we built a risk-adjusted return ratio (average IRR ÷ IRR volatility). Software &amp; IT came out on top at roughly 1.46: strong returns and reasonably stable ones. Consumer Brands looked great on raw average IRR but had volatility above 1.8, which made it a much shakier bet once you accounted for risk.</p>
+          <p>We ran the same risk-adjustment on sales growth (rather than IRR) to check whether an industry's returns were actually backed by healthy business fundamentals, not just favorable exits. That second lens flipped a few rankings: Energy &amp; Sustainability had a weak risk-adjusted IRR but the most stable underlying sales growth in the portfolio, while Consumer Brands' fundamentals looked shakier than its raw IRR suggested. Software &amp; IT was the only sector that held up well on both measures: strong risk-adjusted returns <em>and</em> real growth behind them, which is why it's the one industry I'd call unambiguously attractive.</p>
+          <div class="fig reveal">
+            <img src="../assets/riverside-industry-comparison.png" alt="Grouped bar chart comparing risk-adjusted IRR and sales-based profit-risk ratio across eight industries. Software and IT leads on risk-adjusted IRR at 1.46; Energy and Sustainability leads on sales profit-risk ratio at 0.59 despite a negative risk-adjusted IRR.">
+            <div class="cap">Risk-adjusted IRR vs. sales-based profit-risk ratio, by industry</div>
+          </div>
+        </div>
+        <div class="step" data-n="3">
+          <h3>We built a standardized "early period" for every investment</h3>
+          <p>Companies didn't all start receiving forecasts in the same calendar year, so comparing "2016–2018" across the board would have compared businesses at completely different points in their lifecycle. Instead, we defined Year 1 as the first year a company had a usable forecast, and looked at Years 1–3 relative to that anchor for every investment.</p>
+          <p>To measure how well a company hit its numbers in that early window, we tracked three things side by side for each metric: the <strong>target completion rate</strong> (actual ÷ forecast), the <strong>forecast deviation rate</strong> (how far off the forecast itself was), and the <strong>annual growth rate</strong> (whether the underlying business was trending up or down regardless of the forecast). Splitting those apart mattered: a company that missed its target could still be forecast error rather than a real execution problem, and the deviation rate is what let us tell the difference. Across the portfolio in the earliest window, EBITDA targets were fully met or exceeded only about 30% of the time, and sales targets about 37% of the time. Most companies land somewhere in "partially completed" or "not completed" territory even in a normal year.</p>
+          <div class="fig-row reveal">
+            <div class="fig reveal">
+              <img src="../assets/riverside-ebitda-completion-distribution.png" alt="Bar chart showing distribution of EBITDA target completion rates across the portfolio: 42.7% not completed, 27.0% partially completed, 22.4% met target, 7.9% exceeded target">
+              <div class="cap">EBITDA target completion rate distribution, Year 1</div>
+            </div>
+            <div class="fig reveal">
+              <img src="../assets/riverside-sales-completion-distribution.png" alt="Bar chart showing distribution of sales target completion rates across the portfolio: 23.7% not completed, 39.4% partially completed, 30.5% met target, 6.3% exceeded target">
+              <div class="cap">Sales target completion rate distribution, Year 1</div>
+            </div>
+          </div>
+        </div>
+        <div class="step" data-n="4">
+          <h3>Tested whether early misses predict downside</h3>
+          <p>Using logistic and Firth logistic regression (Firth handles the instability that comes with strongly separated outcomes), we found a clear, steady relationship: the worse a company missed its early forecasts, the more likely it was to end up with a negative IRR: from about 26% at "met or beat forecast" up to roughly 61% for the worst miss band. Every 10-point improvement in early performance cut the odds of a negative outcome by about 14%.</p>
+          <div class="fig-row">
+            <div class="fig">
+              <img src="../assets/early-miss-distribution.jpg" alt="Density plot of worst early performance miss across the portfolio, peaking near zero with a tail extending to -150%, with a red dashed line marking the -54% break-even point">
+              <div class="cap">Distribution of early performance miss (actual vs. forecast)</div>
+            </div>
+            <div class="fig">
+              <img src="../assets/bad-rate-by-miss-band.jpg" alt="Bar chart of negative-IRR rate by early underperformance band, rising from 25.6% at no miss to 61.5% at the -50% to -40% band">
+              <div class="cap">Bad-outcome rate by early underperformance band</div>
+            </div>
+          </div>
+          <div class="fig-row">
+            <div class="fig">
+              <img src="../assets/kill-zone-chart.jpg" alt="Color-banded chart showing predicted probability of negative IRR as early miss deepens, with a -54% break-even line and a -40% red flag trigger marked">
+              <div class="cap">Early-miss risk zones and probability of a negative IRR</div>
+            </div>
+            <div class="fig">
+              <img src="../assets/forest-plot-early-miss.jpg" alt="Forest plot showing the log-odds estimate for the worst early miss predictor, with a 95% confidence interval fully below zero">
+              <div class="cap">Effect size (confidence interval sits entirely below zero)</div>
+            </div>
+          </div>
+        </div>
+        <div class="step" data-n="5">
+          <h3>Tested the reverse, does early overperformance predict winners?</h3>
+          <p>This is the part of the project I'm most proud of, because the answer wasn't the one we expected. Beating forecasts early did <em>not</em> reliably predict a top-tier return (IRR ≥ 25%). LASSO shrank the overperformance coefficient to zero, Ridge pushed it toward zero, and AUC across every model hovered around 0.65, which is weak. A 64% "good outcome" rate in the +10–20% overperformance band looked exciting at first, but it didn't hold up once we validated it across models. Consistency in meeting or beating forecasts turned out to be a more reliable signal than the size of any single beat.</p>
+          <div class="fig">
+            <img src="../assets/good-rate-by-overperformance-band.jpg" alt="Bar chart of good-outcome rate by early overperformance band: 18% below zero, jumping to 64% at 10-20% overperformance, then falling back to 37% and 41.5% at higher bands (a non-monotonic pattern)">
+            <div class="cap">Good-outcome rate by early overperformance band (note the spike doesn't hold at higher bands)</div>
+          </div>
+        </div>
+        <div class="step" data-n="6">
+          <h3>Fund families weren't allocating capital the same way, and it showed</h3>
+          <p>We split the portfolio out by fund family (FF1–FF4, ranging from 184 to 895 investments each) and looked at where each one actually put its money relative to the industry strength we'd already mapped. The pattern was pretty stark: FF2 and FF4 leaned into the industries our analysis had flagged as strongest (FF2 put nearly 28% of its capital into Software &amp; IT alone), while FF1 and FF3 stayed concentrated in the weaker, lower-growth sectors. That allocation difference lined up with a real performance gap: FF1 and FF3 both showed longer stretches with target completion rates under 85%, while FF2 and FF4 recovered faster and stabilized closer to the "met target" range.</p>
+          <div class="fig-row reveal">
+            <div class="fig reveal">
+              <img src="../assets/riverside-fund-family-allocation.png" alt="Four pie charts showing industry allocation for fund families FF1 through FF4. FF2 allocates 27.8% to Software and IT; FF1 allocates 27.8% to Specialty Manufacturing and Distribution, its weakest-performing sector.">
+              <div class="cap">Industry allocation by fund family</div>
+            </div>
+            <div class="fig reveal">
+              <img src="../assets/riverside-fund-family-completion-trend.png" alt="Line chart showing average target completion rate by fund family from 2018 to 2024. FF1 and FF2 recover and stabilize near or above 95% by 2024, while FF4 remains lowest throughout, ending around 88%.">
+              <div class="cap">Average target completion rate by fund family, 2018–2024</div>
+            </div>
+          </div>
+          <p>We also charted raw sales and EBITDA growth by fund family over time, mostly as a sanity check: every fund family grew in absolute terms, which you'd expect in a healthy market, but the <em>spread</em> between families widened every year rather than closing. That widening gap is a more useful signal than any single year's number: it suggests the allocation differences compound rather than average out.</p>
+          <p>Holding period told a related story. FF2 held investments the longest (about 7.5 years on average) while FF4 exited fastest (about 4.9 years). Combined with the allocation pattern, that reads as two different playbooks: FF2 betting long on concentrated Software &amp; IT exposure, FF4 rotating faster through a more balanced portfolio.</p>
+          <div class="fig reveal">
+            <img src="../assets/holding-period-by-ff.jpg" alt="Bar chart of average holding period by fund family: FF4 shortest at about 4.9 years, FF2 longest at about 7.5 years">
+            <div class="cap">Average holding period by fund family</div>
+          </div>
+          <div class="fig-row reveal">
+            <div class="fig reveal">
+              <img src="../assets/riverside-sales-trend-by-fund-family.png" alt="Line chart showing average sales trend from 2014 to 2025 for fund families FF1, FF2, and FF3. FF1 grows from about 65,000 to 131,000; FF2 grows from about 31,000 to 71,000; the gap between them widens over time.">
+              <div class="cap">Average portfolio-company sales by fund family, 2014–2025</div>
+            </div>
+            <div class="fig reveal">
+              <img src="../assets/riverside-ebitda-trend-by-fund-family.png" alt="Line chart showing average EBITDA trend from 2014 to 2025 for fund families FF1, FF2, and FF3, with FF1 growing fastest to about 34,500 by 2025.">
+              <div class="cap">Average portfolio-company EBITDA by fund family, 2014–2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Checking the forecast-outcome link statistically</h2>
+      <p>Beyond the correlation numbers, we ran a chi-square test with Cramér's V as the effect size to check whether hitting a Sales/EBITDA target was actually associated with investment success, not just loosely related to it. IRR came back significant (Cramér's V ≈ 0.25–0.28, a moderate relationship): companies that met or exceeded their operating targets clustered noticeably more often in the "exceed" and "good" IRR bands. GCoC did not (Cramér's V ≈ 0.13–0.18, weak): capital multiples looked more driven by market timing and exit conditions than by operating execution.</p>
+      <div class="fig-row reveal">
+        <div class="fig">
+          <img src="../assets/irr-heatmap.jpg" alt="Heatmap of Sales performance class versus IRR classification counts, showing companies that exceeded or met targets clustering in the exceed/good IRR columns">
+          <div class="cap">Sales performance vs. IRR classification</div>
+        </div>
+        <div class="fig">
+          <img src="../assets/gcoc-heatmap.jpg" alt="Heatmap of Sales performance class versus GCoC classification with a different, weaker pattern, matching the GCoC finding">
+          <div class="cap">Sales performance vs. GCoC classification (weaker pattern)</div>
+        </div>
+      </div>
+      <p>One nuance worth being upfront about: the 26,759-row longitudinal return table (heavily mismatched dates, ~94% missing on realized fields) showed almost no correlation between projected and actual IRR (~0.03). A cleaner, one-row-per-exit table (2,229 rows) showed a moderate correlation instead (~0.55). Our read is that this is a data-quality effect, not a contradiction: the noisier table drowns out a real signal that the better-matched table can see. We'd want to confirm that explicitly before leaning on it in front of a client, but it's a good example of how much the answer can depend on which cut of the data you're using.</p>
+      <div class="fig reveal">
+        <img src="../assets/sales-ebitda-scatter.jpg" alt="Scatter plot of average sales versus average EBITDA by company with a fitted trend line, R-squared 0.43">
+        <div class="cap">Sales vs. EBITDA, company-level averages (R² = 0.43)</div>
+      </div>
+    </div>
+
+    <div class="pull reveal">Downside was easier to predict than upside. A severe early miss carried real information. A huge early beat didn't automatically mean an exceptional investment.</div>
+
+    <div class="block">
+      <h2>Results</h2>
+      <div class="stats reveal">
+        <div class="stat"><div class="num" data-count="29" data-suffix="K+">29K+</div><div class="label">financial-performance observations analyzed</div></div>
+        <div class="stat"><div class="num" data-count="60" data-prefix="~" data-suffix="%">~60%</div><div class="label">negative-IRR rate in the most severe early-miss band</div></div>
+        <div class="stat"><div class="num" data-count="1.46" data-decimals="2">1.46</div><div class="label">Software &amp; IT risk-adjusted IRR ratio</div></div>
+        <div class="stat"><div class="num">0.54–0.67</div><div class="label">AUC range showing weak upside prediction</div></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>What I learned</h2>
+      <p>A statistically interesting result isn't automatically a useful one; that 64% overperformance band looked like a green flag until further modeling showed it didn't hold. And downside and upside genuinely are different problems: early weakness told us something real, early strength mostly didn't. Getting that distinction right is exactly the kind of finding that keeps a client from acting on a hypothesis the data can't actually support.</p>
+    </div>
+
+    <div class="block">
+      <h2>What I'd do differently</h2>
+      <ul>
+        <li>Build one unified investment-level table earlier, instead of repeatedly cleaning and merging across separate analyses</li>
+        <li>Agree on a single metric dictionary (IRR, GCoC, "early period," etc.) at kickoff, before modeling starts</li>
+        <li>Test the early-warning framework on a true holdout set or a later fund vintage, to see whether the signal generalizes</li>
+        <li>Design the final dashboard around decisions ("which investments need attention, and why") rather than just displaying every metric we had</li>
+      </ul>
+    </div>
+
+    </div>
+  </section>
+
+  <div class="wrap">
+    <a href="inventory.html" class="next-project">
+      <div>
+        <div class="lbl">Next project</div>
+        <h3>Optimizing inventory under uncertainty</h3>
+      </div>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="small">Phiona Brenda Umwali &middot; umwalibrendaphiona@gmail.com</div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/brenda-umwali/" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+      <a href="https://github.com/phionabrendaumwali" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.94c.58.1.79-.25.79-.56v-2.16c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.02 1.76 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.2-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.2 1.18a11 11 0 0 1 5.83 0c2.22-1.49 3.19-1.18 3.19-1.18.64 1.59.24 2.76.12 3.05.75.81 1.2 1.83 1.2 3.09 0 4.41-2.7 5.38-5.27 5.67.42.36.78 1.08.78 2.18v3.24c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+      <a href="mailto:umwalibrendaphiona@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
