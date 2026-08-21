@@ -54,7 +54,7 @@
       <ul>
         <li><strong>Problem:</strong> A spare-part network and a vaccine distribution system need completely different inventory strategies, and it wasn't obvious upfront what "optimal" meant for either one.</li>
         <li><strong>What I did:</strong> Modeled and simulated 16 policy combinations per scenario, comparing cost, fill rate, and backorder risk across both.</li>
-        <li><strong>Key finding:</strong> The vaccine scenario's best policy reached a 99.8% fill rate, while the spare-part scenario's balanced policy held 96.7% fill rate at roughly a third of the cost of chasing maximum service.</li>
+        <li><strong>Key finding:</strong> One early configuration nearly wrecked the vaccine scenario: a reorder point set 10x too low collapsed fill rate to 13%, and fixing it brought fill rate back to 99.8%. The spare-part scenario's balanced policy held 96.7% fill rate at roughly a third of the cost of chasing maximum service.</li>
         <li><strong>Impact:</strong> Delivered two clearly justified, scenario-specific inventory policies instead of a one-size-fits-all recommendation.</li>
       </ul>
     </div>
@@ -80,20 +80,20 @@
           <p>For the spare part, EOQ calculations gave us a starting order quantity of 1 unit at the retailer and 5 at the warehouse. Reorder points came from a 90% service-level target, giving us high- and low-variance baselines to start experimenting from, rather than final answers.</p>
         </div>
         <div class="step" data-n="2">
-          <h3>Picked structural policies based on the economics of each system</h3>
-          <p>For the spare part, we favored fixed lot size and warehouse stocking: with demand that unpredictable, a buffer mattered more than trimming inventory. For the vaccine system, we leaned toward order-up-to, since there was no fixed ordering cost penalizing frequent replenishment.</p>
-        </div>
-        <div class="step" data-n="3">
-          <h3>Let simulation challenge our assumptions, and it did</h3>
-          <p>Cross-docking looked attractive for the vaccine scenario on paper: stable demand, fast replenishment. But under high variance, cross-docking actually cost more (~$35/day vs. ~$30/day for regular stocking) while keeping service level about the same. We dropped it from the final recommendation. Theory pointed one way; the simulation told us something different, and we followed the simulation.</p>
-        </div>
-        <div class="step" data-n="4">
           <h3>Caught a badly wrong starting assumption</h3>
           <p>One early configuration set the vaccine retailer's reorder point at 10 units, while actual daily demand was around 100 units. Fill rate collapsed to about 13%. Instead of nudging that number up gradually, we rebuilt the baseline from the actual demand and variance parameters, which brought fill rate close to 100%. Simulation isn't just for confirming a policy works; it's also good for catching when your starting assumption is fundamentally off-scale.</p>
           <div class="fig reveal">
             <img src="../assets/fillrate-vs-backorders-low-variance.png" alt="Chart comparing fill rate against average retailer backorders as warehouse stock level rises. Backorders fall from 100.6 units at S=2900 to 0.1 units by S=3050, while fill rate climbs from 80% to 100%">
             <div class="cap">Fill rate vs. average retailer backorders as warehouse stock level rises: the correction is visible almost immediately</div>
           </div>
+        </div>
+        <div class="step" data-n="3">
+          <h3>Picked structural policies based on the economics of each system</h3>
+          <p>For the spare part, we favored fixed lot size and warehouse stocking: with demand that unpredictable, a buffer mattered more than trimming inventory. For the vaccine system, we leaned toward order-up-to, since there was no fixed ordering cost penalizing frequent replenishment.</p>
+        </div>
+        <div class="step" data-n="4">
+          <h3>Let simulation challenge our assumptions, and it did</h3>
+          <p>Cross-docking looked attractive for the vaccine scenario on paper: stable demand, fast replenishment. But under high variance, cross-docking actually cost more (~$35/day vs. ~$30/day for regular stocking) while keeping service level about the same. We dropped it from the final recommendation. Theory pointed one way; the simulation told us something different, and we followed the simulation.</p>
         </div>
         <div class="step" data-n="5">
           <h3>Tuned incrementally toward the point of diminishing returns</h3>
@@ -164,7 +164,7 @@
     </div>
 
     <div class="block">
-      <h2>What I'd do differently</h2>
+      <h2>What I'd build out next</h2>
       <ul>
         <li>Automate the search instead of tuning parameters by hand: grid search or a simulation-optimization approach would cover far more of the policy space</li>
         <li>Run multiple replications per configuration, since a single stochastic run can look better or worse than it really is</li>
@@ -177,10 +177,10 @@
   </section>
 
   <div class="wrap">
-    <a href="madison.html" class="next-project">
+    <a href="riverside.html" class="next-project">
       <div>
         <div class="lbl">Next project</div>
-        <h3>Madison Bookshelf: a source-grounded research chatbot</h3>
+        <h3>Can early performance predict a private-equity investment's eventual outcome?</h3>
       </div>
       <span class="arrow">&rarr;</span>
     </a>
