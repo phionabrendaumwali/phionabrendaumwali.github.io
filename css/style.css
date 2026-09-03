@@ -20,7 +20,7 @@
   --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
-  --max: 880px;
+  --max: 1160px;
 }
 
 html.dark {
@@ -409,6 +409,12 @@ section.tight { padding: 40px 0; }
   font-size: 13px;
   color: var(--ink-faint);
 }
+.section-note {
+  margin: -24px 0 32px;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
 
 /* ============================================================
    Project grid / cards
@@ -539,7 +545,7 @@ section.tight { padding: 40px 0; }
 }
 .meta-grid .m-value { font-size: 0.94rem; color: var(--ink); }
 
-.case-body { padding: 56px 0 0; min-width: 0; }
+.case-body { padding: 56px 0 0; min-width: 0; max-width: 720px; }
 .case-body h2 {
   font-family: var(--serif);
   font-weight: 500;
