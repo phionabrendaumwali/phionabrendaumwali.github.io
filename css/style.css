@@ -1116,3 +1116,10 @@ section.wrap, section.wrap.tight { padding-left: 28px; padding-right: 28px; }
 .eyebrow { color: var(--accent); }
 .accent-line, .btn-solid { background: var(--ink); }
 .hero-intro { margin-top: 32px; }
+
+/* Restore original hero: photo beside the short bio */
+.hero-intro { flex-direction: row; align-items: center; gap: 36px; margin: 24px 0 8px; }
+.hero-intro .hero-photo { width: 160px; height: 160px; order: 0; margin-top: 0; }
+.hero .lede { font-size: clamp(1.15rem, 2vw, 1.5rem); }
+.hero .lede.small { font-size: 1.05rem; margin-top: 12px; }
+@media (max-width: 700px) { .hero-intro { flex-direction: column; align-items: flex-start; gap: 20px; } .hero-intro .hero-photo { width: 140px; height: 140px; } }
