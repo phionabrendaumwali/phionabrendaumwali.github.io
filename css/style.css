@@ -1026,3 +1026,93 @@ footer .small {
   color: var(--ink-soft);
 }
 .social-icons a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ============================================================
+   White theme (Nov 2026): clean white page, navy text,
+   colorful gradient project tiles. Overrides everything above.
+   ============================================================ */
+:root, html.dark {
+  --bg: #FFFFFF;
+  --bg-card: #F6F6FB;
+  --bg-card-hover: #EEEEF8;
+  --ink: #15164A;
+  --ink-soft: #4A4B73;
+  --ink-faint: #7C7DA0;
+  --line: #E6E6F0;
+  --accent: #5B4BDB;
+  --accent-ink: #3F32B0;
+  --accent-warm: #E0268F;
+  --accent-warm-soft: #FDE3F1;
+  --sage-1: #FFFFFF; --sage-2: #FFFFFF; --sage-3: #FFFFFF;
+  --radius: 4px;
+  --serif: "Karla", "Inter", -apple-system, sans-serif;
+  --sans: "Karla", "Inter", -apple-system, sans-serif;
+  --mono: "Karla", "Inter", -apple-system, sans-serif;
+}
+body { background: #fff !important; font-size: 17px; }
+.bg-field, .hero-glow, .theme-toggle { display: none !important; }
+header.site-nav { background: #fff; border-bottom: none; }
+.nav-links a { color: var(--ink); font-size: 15px; }
+h1, h2, h3 { font-family: var(--sans); color: var(--ink); }
+.hero h1 { font-weight: 500; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.2; letter-spacing: -0.01em; }
+.hero .lede { color: var(--ink); font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.5; }
+.eyebrow, .card .tag { text-transform: none; letter-spacing: 0; font-size: 14px; }
+
+/* Project tiles */
+.grid { gap: 48px; }
+.card {
+  border: none; border-radius: 0; color: #fff;
+  min-height: 420px; padding: 36px 32px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: linear-gradient(160deg, #F72FA6 0%, #FF6FB5 100%);
+}
+.card:hover { transform: translateY(-4px); border: none; filter: brightness(1.04); }
+.card h3, .card p, .card .tag, .card .stack, .card-year { color: #fff; }
+.card h3 { font-size: 1.45rem; font-weight: 600; }
+.card p { font-size: 1rem; font-weight: 500; }
+.card .tag { opacity: .95; font-weight: 600; }
+.card .stack { opacity: .9; font-size: 13px; }
+.card.feature { grid-column: auto; }
+.grid > .card:nth-child(5n+1) { background: linear-gradient(160deg, #F5A300 0%, #FFC800 100%); }
+.grid > .card:nth-child(5n+1) h3, .grid > .card:nth-child(5n+1) p, .grid > .card:nth-child(5n+1) .tag,
+.grid > .card:nth-child(5n+1) .stack, .grid > .card:nth-child(5n+1) .card-year { color: var(--ink); }
+.grid > .card:nth-child(5n+2) { background: linear-gradient(160deg, #E0268F 0%, #FF5CAD 100%); }
+.grid > .card:nth-child(5n+3) { background: linear-gradient(160deg, #007F86 0%, #1FBF8F 100%); }
+.grid > .card:nth-child(5n+4) { background: linear-gradient(160deg, #5B4BDB 0%, #9B7BFF 100%); }
+.grid > .card:nth-child(5n+5) { background: linear-gradient(160deg, #E8501F 0%, #FF9A4D 100%); }
+.wrap.tight .card { background: linear-gradient(160deg, #007F86 0%, #1FBF8F 100%); }
+@media (max-width: 700px) { .card { min-height: 0; padding: 28px 22px; } .grid { gap: 24px; } }
+
+/* Hero: big round photo above the intro, like the reference */
+.hero { padding: 40px 28px 30px; }
+.hero-intro { flex-direction: column; gap: 28px; margin: 18px 0 8px; align-items: flex-start; }
+.hero-intro .hero-photo { width: 168px; height: 168px; margin-top: 0; order: -1; border: none; }
+.hero-intro > div, .hero-intro > p { max-width: 900px; }
+.hero h1 { margin-bottom: 0; }
+
+/* Keep every section on the same left edge as the nav and hero */
+section.wrap, section.wrap.tight { padding-left: 28px; padding-right: 28px; }
+@media (max-width: 560px) { section.wrap, section.wrap.tight, .hero { padding-left: 20px; padding-right: 20px; } }
+
+/* Precision pass: match the reference's structure (Nov 2026) */
+.section-head { border-bottom: none; margin-bottom: 28px; }
+.section-head h2 { font-size: 1.6rem; font-weight: 500; }
+.hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.2rem); font-weight: 500; }
+.hero .lede { font-size: clamp(1.3rem, 2.4vw, 1.9rem); line-height: 1.45; font-weight: 400; max-width: 1000px; }
+.hero-intro > div, .hero-intro > p { max-width: 1000px; }
+.grid { gap: 48px; }
+.card { aspect-ratio: 1 / 1; min-height: 0; padding: 36px; justify-content: center; }
+.card-year { display: none; }
+@media (max-width: 700px) { .card { aspect-ratio: auto; } }
+
+/* Own palette: blue, coral, emerald, violet, sky (no yellow/pink/teal like the reference) */
+.card, .grid > .card:nth-child(5n+2), .grid > .card:nth-child(5n+3), .grid > .card:nth-child(5n+4), .grid > .card:nth-child(5n+5), .wrap.tight .card { color:#fff; }
+.grid > .card:nth-child(5n+1) { background: linear-gradient(160deg, #1F3FD1 0%, #4C7DFF 100%); }
+.grid > .card:nth-child(5n+2) { background: linear-gradient(160deg, #E4472A 0%, #FF8A5C 100%); }
+.grid > .card:nth-child(5n+3) { background: linear-gradient(160deg, #0B7A4B 0%, #3FCB86 100%); }
+.grid > .card:nth-child(5n+4) { background: linear-gradient(160deg, #6A2BD9 0%, #A77BFF 100%); }
+.grid > .card:nth-child(5n+5) { background: linear-gradient(160deg, #0A6C9E 0%, #34B6E8 100%); }
+.grid > .card:nth-child(5n+1) h3, .grid > .card:nth-child(5n+1) p, .grid > .card:nth-child(5n+1) .tag, .grid > .card:nth-child(5n+1) .stack { color:#fff; }
+.eyebrow { color: var(--accent); }
+.accent-line, .btn-solid { background: var(--ink); }
+.hero-intro { margin-top: 32px; }
